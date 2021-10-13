@@ -1,0 +1,26 @@
+{
+  "name": "test-jsdoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsdoc-build": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gennadiipetrov/test-jsdoc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gennadiipetrov/test-jsdoc/issues"
+  },
+  "homepage": "https://github.com/gennadiipetrov/test-jsdoc#readme",
+  "dependencies": {
+    "jsdoc": "^3.6.7"
+  }
+}

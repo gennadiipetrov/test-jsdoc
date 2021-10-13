@@ -1,0 +1,39 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": [
+                    "./project1",
+                    "./project2",
+                    "./project3"
+                   ],
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
+        "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
+    },
+    "plugins": [ ],
+    "opts": {
+        "encoding": "utf8",
+        "destination": "docs",
+        "readme": "./docs-src/home.md",
+        "recurse": true,
+        "private": true,
+        "verbose": true,
+        "tutorials": "./docs-src",
+        "sections": "./docs-src",
+        "template": ""
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "search": true,
+        "default": {
+            "includeDate": false,
+            "staticFiles": {
+              "include": [
+                  "./docs-src"
+              ]
+            }
+        }
+    }
+}
