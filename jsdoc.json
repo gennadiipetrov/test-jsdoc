@@ -11,8 +11,14 @@
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
     },
-    "plugins": [ ],
+    "plugins": [
+        "jsdoc-mermaid",
+        "node_modules/better-docs/typescript",
+        "node_modules/better-docs/category",
+        "node_modules/better-docs/component"
+     ],
     "opts": {
+        "template": "node_modules/better-docs",
         "encoding": "utf8",
         "destination": "docs",
         "readme": "./docs-src/home.md",
@@ -20,8 +26,7 @@
         "private": true,
         "verbose": true,
         "tutorials": "./docs-src",
-        "sections": "./docs-src",
-        "template": ""
+        "sections": "./docs-src"
     },
     "templates": {
         "cleverLinks": false,
@@ -34,6 +39,24 @@
                   "./docs-src"
               ]
             }
+        },
+        "better-docs": {
+            "name": "AdminBro Documentation",
+            "logo": "images/logo.png",
+            "title": "",
+            "css": "style.css",
+            "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
+            "hideGenerator": false,
+                "navLinks": [
+                    {
+                        "label": "Github",
+                        "href": "https://github.com/SoftwareBrothers/admin-bro"
+                    },
+                    {
+                        "label": "Example Application",
+                        "href": "https://admin-bro-example-app.herokuapp.com/admin"
+                    }
+                ]
         }
     }
 }

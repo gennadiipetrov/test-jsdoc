@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/gennadiipetrov/test-jsdoc#readme",
   "dependencies": {
-    "jsdoc": "^3.6.7"
+    "jsdoc": "^3.6.7",
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "better-docs": "^2.3.2",
+    "jsdoc-mermaid": "^1.0.0"
   }
 }
