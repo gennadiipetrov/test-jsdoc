@@ -5,7 +5,7 @@
   tracking-code-which-will-go-to-the-HEAD
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Bind</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -104,7 +104,7 @@
 </div>
     <div id="main">
         <div
-            class="sidebar "
+            class="sidebar tutorials"
             id="sidebarNav"
         >
             
@@ -114,63 +114,41 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Book.html">Book</a></li><li><a href="C.html">C</a></li><li><a href="ClassName.html">ClassName</a></li></ul><h3>Components</h3><ul><li><a href="Documented.html">Documented</a></li></ul><h3>Global</h3><ul><li><a href="global.html#add">add</a></li><li><a href="global.html#fn9">fn9</a></li><li><a href="global.html#fn10">fn10</a></li><li><a href="global.html#myArrow">myArrow</a></li><li><a href="global.html#someFunc">someFunc</a></li></ul></div><div class="category"><h2>Animal</h2><h3>Classes / Animal</h3><ul><li><a href="Animal.html">Animal</a></li></ul></div><div class="category"><h2>Animals</h2><h3>Classes / Animal</h3><ul><li><a href="Cat.html">Cat</a></li></ul></div><div class="category"><h2>Cars</h2><h3>Classes / Car</h3><ul><li><a href="Bentley.html">Bentley</a></li><li><a href="Car.html">Car</a></li><li><a href="Volvo.html">Volvo</a></li></ul></div><div class="category"><h2>Person</h2><h3>Classes / Person</h3><ul><li><a href="Person.html">Person</a></li><li><a href="Student.html">Student</a></li><li><a href="Teacher.html">Teacher</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-Bind.html">Bind</a></li><li><a href="tutorial-Types.html">Types</a></li><li><a href="tutorial-Var.html">Var</a></li></ul></div>
                 
             </nav>
         </div>
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Tutorial</p>
+                    <h1>Bind</h1>
                 </header>
-                
+                <section>
 
-
-
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <section>
-        <article><p>В JS для объявления переменной используются <strong>var, let, const</strong>. Ключевые слова let и const появился в es5 до этого был var. <strong>Let</strong> и <strong>const</strong> активны в своем лексическом окружении, то есть внутри областей видимости (то есть внутри функций, циклов, if, switch). <strong>var</strong> - делает всплытие переменной(hoisting) он ограничен лишь скоупом функции, а не скоупом <em>for, if, while</em> - ему наплевать.</p>
-<p>Это будет работать</p>
-<pre class="prettyprint source lang-js"><code>function foo() {
-    p = 10; // p будет 10 так как var
-    var p;  // поднимается вверх функции
-} 
+<article>
+    <h1>Bind, call, apply</h1>
+<p>Для связи определенного контекста к объекту используют эти функции</p>
+<pre class="prettyprint source lang-js"><code>person.logInfo.bind(lena, &quot;back&quot;, 20)();
 </code></pre>
-<p>Этот код аналогичен</p>
-<pre class="prettyprint source lang-js"><code>function foo() {
-    var p = undefined;
-    p = 10;
-} 
+<ul>
+<li><em>person.logInfo</em> - функция</li>
+<li><em>lena</em> - объект то что будет this</li>
+<li><em>&quot;back&quot;, 20</em> - аргументы</li>
+</ul>
+<p>call - без скобок</p>
+<pre class="prettyprint source lang-js"><code>person.logInfo.call(lena, &quot;back&quot;, 20);
 </code></pre>
-<p><strong>Let, const</strong> - имеют блочную область видимости ограниченную в</p>
-<pre class="prettyprint source lang-js"><code>{/*block*/}
+<p>apply - аргументы в виде массива</p>
+<pre class="prettyprint source lang-js"><code>person.logInfo.apply(lena, [&quot;back&quot;, 20]);
 </code></pre>
-<p><strong>var</strong> - функциональная область видимости, объявление переменной поднимается до начала функции.</p></article>
-    </section>
+<p>То есть все эти функции отличаются передачей аргументов.</p>
+<h1>Отличие Bind от Call</h1>
+<pre class="prettyprint source lang-js"><code>obj.bind(obj2)();
+</code></pre>
+</article>
 
-
-
-
-
+</section>
 
             </div>
             

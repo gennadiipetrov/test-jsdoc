@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  tracking-code-which-will-go-to-the-HEAD
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Types</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Region 18 Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-Bind.html">
+                                Bind
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-Types.html">
+                                Types
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-Var.html">
+                                Var
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://sourcemaking.com/antipatterns/software-development-antipatterns"
+                        >
+                            AntiPatterns
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://flexboxfroggy.com/#ru"
+                        >
+                            FLEXBOX FROGGY
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar tutorials"
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-Bind.html">Bind</a></li><li><a href="tutorial-Types.html">Types</a></li><li><a href="tutorial-Var.html">Var</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Tutorial</p>
+                    <h1>Types</h1>
+                </header>
+                <section>
+
+<article>
+    <p>В Js есть простые типы данных и объекты. Всего встроенных типов - 8. Также можно создавать кастомные типы - это объекты. В Javascript у переменных нет типов - типы есть у значений. Можно также разделить типы на ссылочные типы и value типы.</p>
+<p>Например,</p>
+<pre class="prettyprint source lang-js"><code>var a = 42;
+typeof a;  // number
+a = true;
+typeof a;  // boolean
+</code></pre>
+<p>Типы Js:</p>
+<ul>
+<li>
+<p><em>number</em> - числа от -2^53 до 2^53. Целые и вещественные;</p>
+</li>
+<li>
+<p><em>bigint</em> - числа произвольной длины;</p>
+</li>
+<li>
+<p><em>string</em> - строки;</p>
+</li>
+<li>
+<p><em>boolean</em> - логические типы;</p>
+</li>
+<li>
+<p><em>null</em> - для неизвестных значений;</p>
+</li>
+<li>
+<p><em>undefined</em> - для неприсвоенных значений;</p>
+</li>
+<li>
+<p><em>object</em> - для сложных структур (array, объекты);</p>
+</li>
+<li>
+<p><em>symbol</em> - для уникальных идентификаторов;</p>
+</li>
+</ul>
+<p><em>undefined</em> - тип который содержит такое же значение.</p>
+<pre class="prettyprint source lang-js"><code>var a;
+typeof a; // undefined 
+typeof b; // undefined 
+</code></pre>
+<p>Интересен факт, что <em>b</em> не объявлен, но ошибки в консоль не выводится, за счет <em>typeof</em>. Такая особенность <em>typeof</em>. Это может пригодится для безопасной проверки наличия каких-то переменных, например полифилов. Строки в JS имутабельны, поэтому обратится к определенному символу и изменить его нельзя, нужно применять функцию к строке и возвращать новую. Массивы же наоборот(чтобы строку перевести в массив можно использовать <code>Array.from</code>). Поэтому в таких случаях иногда переводят строку в массив и выполняют какие-то преобразования.</p>
+<p>Например надо сделать реверс строки</p>
+<pre class="prettyprint source lang-js"><code>var c = a.split(&quot;&quot;).reverse().join(&quot;&quot;); 
+</code></pre>
+<p><em>Number</em> - подчиняется спецификации IEEE754. Числа пишутся в формате <code>45.0</code> или <code>45.</code> или <code>45</code>. Так вот запись <code>45.toFixed()</code> - не будет работать, потому что точка будет интерпретироваться как <code>45.</code> число. Чтобы это исправить ставят 2 точки или в круглые скобки оборачивают число <code>45..toFixed()</code>. Еще есть void - он стирает значение, записывая в него undefined. Нужно это например, чтобы функция возвращала какую-то другую функцию, возвращающую значение, но чтобы его затереть, чтобы не писать в 2 строки в общем. То есть вместо</p>
+<pre class="prettyprint source lang-js"><code>...
+setTimeout()
+return
+
+// пишут так
+
+return void setTimeout
+</code></pre>
+<h1>Преобразование типов</h1>
+<p>В Js типы преобразуются неявно, но можно использовать String, Number, Boolean для явного преобразования.</p>
+<p>В процессе преобразования движок JavaScript пытается найти и вызвать три следующих метода объекта:</p>
+<ul>
+<li>Вызывает obj<a href="hint">Symbol.toPrimitive</a> – метод с символьным ключом Symbol.toPrimitive (системный символ), если такой метод существует, и передаёт ему хинт.</li>
+<li>Иначе, если хинт равен &quot;string&quot; пытается вызвать obj.toString(), а если его нет, то obj.valueOf(), если он существует.</li>
+<li>В случае, если хинт равен &quot;number&quot; или &quot;default&quot; пытается вызвать obj.valueOf(), а если его нет, то obj.toString(), если он существует.</li>
+</ul>
+<p><a href="https://learn.javascript.ru/object-toprimitive">Преобразование</a></p>
+<p><em>String(value)</em> - явно все преобразует в строку, н-р false -&gt; &quot;false&quot;, NaN -&gt; &quot; NaN&quot;</p>
+<p><em>Number(value)</em></p>
+<pre class="prettyprint source lang-js"><code>undefined -> NaN
+null, &quot;&quot;, false -> 0
+true -> 1
+&quot;123&quot; -> 123
+&quot;123X&quot; -> NaN
+Infinity -> Infinity
+</code></pre>
+<p><em>Boolean(value)</em></p>
+<pre class="prettyprint source lang-js"><code>0, null, undefined, NaN, &quot;&quot; -> false
+
+Infinity, -1, &quot; &quot;, &quot;test&quot;, 123 -> true
+</code></pre>
+<p>Все операции &quot;+&quot; рассматриваются как канкатенации, например</p>
+<pre class="prettyprint source lang-js"><code>&quot;2&quot; + 4 = &quot;24&quot;
+&quot;2&quot; - 2 = 0
+undefined + 2 = NaN, так как undefined преобразуется в NaN
+</code></pre>
+<h1>Сравнение == и ===</h1>
+<p><strong>==</strong> - сравнение двух величин с использование преобразования.</p>
+<p>Если один из членов операции сравнения отличен от другого, то происходят преобразования. Сначала до строковых значений, затем до числовых.</p>
+<pre class="prettyprint source lang-js"><code>Например, 
+'2' == 2
+true == 1
+false == 0
+'' == false
+</code></pre>
+<p><strong>===</strong> - сравнение двух величин без преобразования.</p>
+<pre class="prettyprint source lang-js"><code>Например, 
+'2' === 2
+false === 0
+</code></pre>
+<p>Есть еще один интересный пример:</p>
+<pre class="prettyprint source lang-js"><code>new String(&quot;a&quot;) == new String(&quot;a&quot;) // false
+&quot;a&quot; == new String(&quot;a&quot;) // true
+</code></pre>
+<p>Потому что преобразования к примитивному значению тут не происходит, а значения ссылок не равны. Если же в одной из частей будет примитивное значение, то преобразование объекта к примитивному значению произойдет. Операции равенства врут для -0, <code>NaN</code>. Чтобы проверить переменную на <code>NaN</code> используют <code>Number.isNaN</code>. А чтобы сделать проверку на <code>-0</code>, надо свою функцию писать</p>
+<pre class="prettyprint source lang-js"><code>var r = Number(g); // где g вероятно -0 или &quot;-0&quot;
+
+(r === 0) && (1/r === - infinity)
+</code></pre>
+<p>Чтобы такого не делать в es6 появилась функция <code>Object.is</code>. Которая адекватно все может сравнить. Следующие диаграммы взяты с</p>
+<p><a href="https://stackoverflow.com/questions/3586775/what-is-the-correct-way-to-check-for-string-equality-in-javascript">stackoverflow</a></p>
+<p>для <code>==</code></p>
+<p><img src="https://i.stack.imgur.com/nkpj6.png" alt="Диаграмма"></p>
+<p>для <code>===</code></p>
+<p><img src="https://i.stack.imgur.com/DIqvq.png" alt="Диаграмма"></p>
+<h1>Array, Date, Regexp, Set, Map, WeakMap ...</h1>
+<p><em>Set, WeakMap, Map</em> и тд - в разной литературе по-разному, кто-то их называет типами, на MDN их называют глобальными объектами глобальные объекты, которые наследуются от Object.</p>
+<p>Проверить тип можно по внутреннему полю <code>[[Class]]</code>:</p>
+<pre class="prettyprint source lang-js"><code>Object.prototype.toString.call(null); \\ [object Null]
+Object.prototype.toString.call(undefined); \\ [object Undefined]
+Object.prototype.toString.call(new WeakMap()); \\ [object Undefined]
+Object.prototype.toString.call({}); \\ [object Object]
+Object.prototype.toString.call([]); \\ [object Array]
+Object.prototype.toString.call(1); \\ [object Number]
+Object.prototype.toString.call(&quot;&quot;); \\ [object String]
+</code></pre>
+<h2>Откуда у простых типов свойства?</h2>
+<p>Js движок конвертирует примитивный тип в объект String и на прототипе этого объекта уже будут функции. Переопределить метод на примитивном типе нельзя, так как после выполнения функции - объект обертка уничтожается(происходит что-то типа boxing\unboxing). Тоже касается и например Number и других.</p>
+<pre class="prettyprint source lang-js"><code>123..toString() 
+</code></pre>
+<p>Тут 2 точки потому что перавя точка относится к числу, например 123 иожно записать как 123. или 123.0, а вторая точка - это доступ к обертке с методами.</p>
+</article>
+
+</section>
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

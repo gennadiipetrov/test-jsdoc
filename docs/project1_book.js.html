@@ -41,14 +41,10 @@
             <span aria-hidden="true"></span>
         </a>
         <div class="logo">
-             
-                <a class="image" href="index.html">
-                    <img src="images/logo.png" alt="logo">
-                </a>
             
              
                 <a href="index.html">
-                    <h1 class="navbar-item">AdminBro Documentation</h1>
+                    <h1 class="navbar-item">Region 18 Documentation</h1>
                 </a>
             
         </div>
@@ -70,12 +66,16 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-content">
                         
-                            <a class="dropdown-item" href="tutorial-home.html">
-                                home
+                            <a class="dropdown-item" href="tutorial-Bind.html">
+                                Bind
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-README.html">
-                                README
+                            <a class="dropdown-item" href="tutorial-Types.html">
+                                Types
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-Var.html">
+                                Var
                             </a>
                         
                         </div>
@@ -86,16 +86,16 @@
                     
                         <a
                             class="link user-link "
-                            href="https://github.com/SoftwareBrothers/admin-bro"
+                            href="https://sourcemaking.com/antipatterns/software-development-antipatterns"
                         >
-                            Github
+                            AntiPatterns
                         </a>
                     
                         <a
                             class="link user-link "
-                            href="https://admin-bro-example-app.herokuapp.com/admin"
+                            href="https://flexboxfroggy.com/#ru"
                         >
-                            Example Application
+                            FLEXBOX FROGGY
                         </a>
                     
                 
@@ -116,7 +116,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Book.html">Book</a></li><li><a href="C.html">C</a></li><li><a href="ClassName.html">ClassName</a></li></ul><h3>Components</h3><ul><li><a href="Documented.html">Documented</a></li></ul><h3>Global</h3><ul><li><a href="global.html#add">add</a></li><li><a href="global.html#fn9">fn9</a></li><li><a href="global.html#fn10">fn10</a></li><li><a href="global.html#myArrow">myArrow</a></li><li><a href="global.html#someFunc">someFunc</a></li></ul></div><div class="category"><h2>Category</h2><h3>Classes / All</h3><ul><li><a href="YourClassA.html">YourClassA</a></li><li><a href="YourClassB.html">YourClassB</a></li><li><a href="YourClassC.html">YourClassC</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Book.html">Book</a></li><li><a href="C.html">C</a></li><li><a href="ClassName.html">ClassName</a></li></ul><h3>Components</h3><ul><li><a href="Documented.html">Documented</a></li></ul><h3>Global</h3><ul><li><a href="global.html#add">add</a></li><li><a href="global.html#fn9">fn9</a></li><li><a href="global.html#fn10">fn10</a></li><li><a href="global.html#myArrow">myArrow</a></li><li><a href="global.html#someFunc">someFunc</a></li></ul></div><div class="category"><h2>Animal</h2><h3>Classes / Animal</h3><ul><li><a href="Animal.html">Animal</a></li></ul></div><div class="category"><h2>Animals</h2><h3>Classes / Animal</h3><ul><li><a href="Cat.html">Cat</a></li></ul></div><div class="category"><h2>Cars</h2><h3>Classes / Car</h3><ul><li><a href="Bentley.html">Bentley</a></li><li><a href="Car.html">Car</a></li><li><a href="Volvo.html">Volvo</a></li></ul></div><div class="category"><h2>Person</h2><h3>Classes / Person</h3><ul><li><a href="Person.html">Person</a></li><li><a href="Student.html">Student</a></li><li><a href="Teacher.html">Teacher</a></li></ul></div>
                 
             </nav>
         </div>
@@ -135,16 +135,24 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * Represents a book.
+ * 
+ * `callback` это функция, которая вызывается в другой функции, передается в нее в качестве аргумента.
+ * Например,
+ * ```js
+ * function Foo(someCallback) {
+ * // ...
+ * someCallback(1,2,3,4);
+ * // ...
+ * }
+ * function realCallback(a,b,c,d) {
+ * }
+ * Foo(realCallback)
+ * ```
+ * 
  * @constructor
  * @param {string} title - The title of the book.
  * @param {string} author - The author of the book.
  *
- * @mermaid
- *   graph TD;
- *     A-->B;
- *     A-->C;
- *     B-->D;
- *     C-->D;
  */
 function Book(title, author) {
   /* ... */

@@ -15,13 +15,14 @@
         "jsdoc-mermaid",
         "node_modules/better-docs/typescript",
         "node_modules/better-docs/category",
-        "node_modules/better-docs/component"
+        "node_modules/better-docs/component",
+        "plugins/markdown"
      ],
     "opts": {
         "template": "node_modules/better-docs",
         "encoding": "utf8",
         "destination": "docs",
-        "readme": "./docs-src/home.md",
+        "readme": "./docs-src/Var.md",
         "recurse": true,
         "private": true,
         "verbose": true,
@@ -41,20 +42,20 @@
             }
         },
         "better-docs": {
-            "name": "AdminBro Documentation",
-            "logo": "images/logo.png",
+            "name": "Region 18 Documentation",
+            "logo": "",
             "title": "",
             "css": "style.css",
             "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
             "hideGenerator": false,
                 "navLinks": [
                     {
-                        "label": "Github",
-                        "href": "https://github.com/SoftwareBrothers/admin-bro"
+                        "label": "AntiPatterns",
+                        "href": "https://sourcemaking.com/antipatterns/software-development-antipatterns"
                     },
                     {
-                        "label": "Example Application",
-                        "href": "https://admin-bro-example-app.herokuapp.com/admin"
+                        "label": "FLEXBOX FROGGY",
+                        "href": "https://flexboxfroggy.com/#ru"
                     }
                 ]
         }
